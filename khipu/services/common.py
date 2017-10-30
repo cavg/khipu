@@ -63,4 +63,4 @@ class KhipuService(object):
 
     def request(self):
         self.data['hash'] = self.do_hash()
-        return self.requests.post(self.get_url_service(), self.data).json()
+        return self.requests.post(self.get_url_service(), data = self.data).json()
