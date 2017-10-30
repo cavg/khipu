@@ -50,7 +50,7 @@ class KhipuService(object):
         """
         Genera el Hash que requiere khipu.
         """
-        return hmac.new(self.secret, self.concatenated(), hashlib.sha256).hexdigest()
+        return hmac.new(self.secret.encode(), self.concatenated().encode(), hashlib.sha256).hexdigest()
 
     def concatenated(self):
         cad = ''
