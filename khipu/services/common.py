@@ -11,7 +11,7 @@ class KhipuService(object):
     A client for the Khipu API.
     """
     # Url del servicio
-    api_url = 'https://khipu.com/api/%s/' % VERSION_KHIPU_SERVICE
+    api_url = 'https://khipu.com/integratorApi/%s/' % VERSION_KHIPU_SERVICE
     # diccionario de datos que se enviarán al servicio
     data = None
     # mensaje en caso de error u otro evento
@@ -63,4 +63,4 @@ class KhipuService(object):
 
     def request(self):
         self.data['hash'] = self.do_hash()
-        return self.requests.post(self.get_url_service(), data = self.data).json()
+        return self.requests.post(self.get_url_service(), data = dict(self.data))
