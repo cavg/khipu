@@ -43,7 +43,7 @@ class KhipuService(object):
         Método para guardar, desde un diccionario, todos los elementos que debe
         tener el diccionario data
         """
-        for name, value in values.iteritems():
+        for name, value in values.items():
             self.set_parameter(name, value)
 
     def do_hash(self):
@@ -54,7 +54,7 @@ class KhipuService(object):
 
     def concatenated(self):
         cad = ''
-        for key, value in self.data.iteritems():
+        for key, value in self.data.items():
             cad += '{0}={1}&'.format(key, value)
         return cad[0:-1]
 
